@@ -19,6 +19,6 @@ public:
     }
 private:
     Eigen::Vector<scalar_t, OUT_SZ> m_bias;
-    Eigen::Matrix<scalar_t, OUT_SZ, IN_SZ> m_weight;
+    Eigen::Matrix<scalar_t, IN_SZ, OUT_SZ> m_weight;
     Eigen::Vector<scalar_t, OUT_SZ> m_out;
 };

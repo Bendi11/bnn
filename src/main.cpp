@@ -3,5 +3,6 @@
 #include <cxxabi.h>
 
 int main(int argc, const char *argv[]) {
-    std::cout << abi::__cxa_demangle(typeid(Network<2, 5, 3>::Layers).name(), NULL, NULL, NULL) << std::endl; 
+    auto network = Network<2, 5, 1>{};
+    network.forward({0, 1});
 }
