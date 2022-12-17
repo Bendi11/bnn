@@ -24,7 +24,6 @@ struct Sigmoid {
     }
 
     static inline constexpr scalar_t derivative(scalar_t v) noexcept {
-        v = activate(v);
         return v * (1. - v);
     }
 };

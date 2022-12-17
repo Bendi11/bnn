@@ -13,6 +13,7 @@ set(
     SRC
     "src/main.cpp"
     "src/layer.cpp"
+    "src/net.cpp"
 )
 
 add_executable(${PROJECT_NAME} ${SRC})
