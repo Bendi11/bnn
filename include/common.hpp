@@ -1,4 +1,5 @@
 #pragma once
+#include <Eigen/Dense>
 #include <cmath>
 #include <concepts>
 
@@ -29,3 +30,11 @@ struct Sigmoid {
 };
 
 static_assert(ActivationFunction<Sigmoid>);
+
+/**
+ * \brief A single training input containing expected output for the given input
+ */
+struct TrainingInput {
+    Eigen::VectorX<scalar_t> input;
+    Eigen::VectorX<scalar_t> expected;
+};

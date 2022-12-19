@@ -1,4 +1,5 @@
 #pragma once
+#include "common.hpp"
 #include <Eigen/Dense>
 #include <layer.hpp>
 #include <iostream>
@@ -22,7 +23,11 @@ public:
      */
     void forward(Eigen::Ref<const Eigen::VectorX<scalar_t>> input);
     
-    scalar_t cost(Eigen::Ref<const Eigen::VectorX<scalar_t>> input);
+    scalar_t cost(TrainingInput const& input);
+    
+    scalar_t cost_avg(std::vector<TrainingInput> const& inputs);
+
+    void train(std::vector<TrainingInput> const& inputs, scalar_t lr);
 private:
     std::vector<Layer> m_layers{};
 };
